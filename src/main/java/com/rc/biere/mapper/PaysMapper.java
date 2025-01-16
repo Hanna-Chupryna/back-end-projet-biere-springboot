@@ -1,6 +1,7 @@
 package com.rc.biere.mapper;
 
 import com.rc.biere.dto.PaysDto;
+import com.rc.biere.entity.Continent;
 import com.rc.biere.entity.Pays;
 
 public class PaysMapper {
@@ -9,7 +10,10 @@ public class PaysMapper {
         PaysDto dto = new PaysDto();
         dto.setId(pays.getId());
         dto.setNomPays(pays.getNomPays());
-        dto.setIdContinent(pays.getIdContinent());
+
+        if (pays.getIdContinent() != null) {
+            dto.setIdContinent(pays.getIdContinent().getId());
+        }
         return dto;
     }
 
@@ -17,7 +21,12 @@ public class PaysMapper {
         Pays pays = new Pays();
         pays.setId(paysDto.getId());
         pays.setNomPays(paysDto.getNomPays());
-        pays.setIdContinent(paysDto.getIdContinent());
+
+        if (paysDto.getIdContinent() != null) {
+            Continent continent = new Continent();
+            continent.setId(paysDto.getIdContinent());
+            paysDto.setIdContinent(continent.getId());
+        }
         return pays;
     }
 }

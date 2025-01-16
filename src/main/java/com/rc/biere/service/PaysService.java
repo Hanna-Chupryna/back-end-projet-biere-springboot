@@ -22,7 +22,4 @@ public class PaysService {
         return paysRepository.findAll().stream().map(PaysMapper::toDto).collect(Collectors.toList());
     }
 
-    public List<PaysDto> getPaysByContinentId(Integer continentId){
-        return paysRepository.findByIdContinentId(continentId).stream().map(PaysMapper::toDto).collect(Collectors.toList());
-    }
 }

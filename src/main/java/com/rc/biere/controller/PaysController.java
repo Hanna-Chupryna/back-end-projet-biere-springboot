@@ -26,11 +26,4 @@ public class PaysController {
         return ResponseEntity.ok(listPays);
     }
 
-    @GetMapping("/continent/{continentId}")
-    public ResponseEntity<?> getPaysByContinent(@PathVariable Integer continentId) {
-        List<PaysDto> listPays = paysService.getPaysByContinentId(continentId);
-        return ResponseEntity.ok(listPays);
-    }
-
-
 }
