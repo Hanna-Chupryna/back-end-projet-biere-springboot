@@ -24,4 +24,28 @@ public class Ticket {
     @Column(name = "HEURE_VENTE", nullable = false)
     private LocalTime heureVente;
 
+
+    public TicketId getId() {
+        return id;
+    }
+
+    public void setId(TicketId id) {
+        this.id = id;
+    }
+
+    public LocalDate getDateVente() {
+        return dateVente;
+    }
+
+    public void setDateVente(LocalDate dateVente) {
+        this.dateVente = dateVente;
+    }
+
+    public LocalTime getHeureVente() {
+        return heureVente;
+    }
+
+    public void setHeureVente(LocalTime heureVente) {
+        this.heureVente = heureVente;
+    }
 }

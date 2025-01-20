@@ -39,4 +39,67 @@ public class Article {
     @JoinColumn(name = "ID_TYPE")
     private com.rc.biere.entity.Typebiere idType;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNomArticle() {
+        return nomArticle;
+    }
+
+    public void setNomArticle(String nomArticle) {
+        this.nomArticle = nomArticle;
+    }
+
+    public BigDecimal getPrixAchat() {
+        return prixAchat;
+    }
+
+    public void setPrixAchat(BigDecimal prixAchat) {
+        this.prixAchat = prixAchat;
+    }
+
+    public Integer getVolume() {
+        return volume;
+    }
+
+    public void setVolume(Integer volume) {
+        this.volume = volume;
+    }
+
+    public Float getTitrage() {
+        return titrage;
+    }
+
+    public void setTitrage(Float titrage) {
+        this.titrage = titrage;
+    }
+
+    public Marque getIdMarque() {
+        return idMarque;
+    }
+
+    public void setIdMarque(Marque idMarque) {
+        this.idMarque = idMarque;
+    }
+
+    public Couleur getIdCouleur() {
+        return idCouleur;
+    }
+
+    public void setIdCouleur(Couleur idCouleur) {
+        this.idCouleur = idCouleur;
+    }
+
+    public Typebiere getIdType() {
+        return idType;
+    }
+
+    public void setIdType(Typebiere idType) {
+        this.idType = idType;
+    }
 }

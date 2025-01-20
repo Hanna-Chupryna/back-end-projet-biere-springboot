@@ -25,4 +25,35 @@ public class Vendre {
     @Column(name = "prix_vente", precision = 19, scale = 4)
     private BigDecimal prixVente;
 
+    public VendreId getId() {
+        return id;
+    }
+
+    public void setId(VendreId id) {
+        this.id = id;
+    }
+
+    public Article getAnnee() {
+        return annee;
+    }
+
+    public void setAnnee(Article annee) {
+        this.annee = annee;
+    }
+
+    public Integer getQuantite() {
+        return quantite;
+    }
+
+    public void setQuantite(Integer quantite) {
+        this.quantite = quantite;
+    }
+
+    public BigDecimal getPrixVente() {
+        return prixVente;
+    }
+
+    public void setPrixVente(BigDecimal prixVente) {
+        this.prixVente = prixVente;
+    }
 }
