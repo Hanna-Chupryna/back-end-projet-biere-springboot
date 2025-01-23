@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @Table(name = "article")
 public class Article {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_ARTICLE", nullable = false)
     private Integer id;
 

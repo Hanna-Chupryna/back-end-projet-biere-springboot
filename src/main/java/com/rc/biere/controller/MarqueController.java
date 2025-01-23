@@ -24,4 +24,10 @@ public class MarqueController {
         return ResponseEntity.ok(marques);
     }
 
+    @PostMapping("/add")
+    public ResponseEntity<?> addMarque(@RequestBody MarqueDto marqueDto) {
+        MarqueDto savedMarque = marqueService.addMarque(marqueDto);
+        return ResponseEntity.ok(savedMarque);
+    }
+
 }

@@ -3,10 +3,7 @@ package com.rc.biere.controller;
 import com.rc.biere.dto.ArticleDto;
 import com.rc.biere.service.ArticleService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,6 +29,12 @@ public class ArticleController {
         Optional<ArticleDto> article = articleService.getArticleById(id);
         return article.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<?> addArticle(@RequestBody ArticleDto articleDto) {
+        ArticleDto savedArticle = articleService.addArticle(articleDto);
+        return ResponseEntity.ok(savedArticle);
     }
 
 }

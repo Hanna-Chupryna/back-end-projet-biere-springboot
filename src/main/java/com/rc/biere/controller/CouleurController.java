@@ -16,6 +16,7 @@ public class CouleurController {
     private final CouleurService couleurService;
 
     public CouleurController(CouleurService couleurService) {
+
         this.couleurService = couleurService;
     }
 

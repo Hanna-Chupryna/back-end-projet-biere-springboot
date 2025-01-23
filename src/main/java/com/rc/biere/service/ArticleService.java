@@ -1,6 +1,7 @@
 package com.rc.biere.service;
 
 import com.rc.biere.dto.ArticleDto;
+import com.rc.biere.entity.Article;
 import com.rc.biere.mapper.ArticleMapper;
 import com.rc.biere.repository.ArticleRepository;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,12 @@ public class ArticleService {
 
     public Optional<ArticleDto> getArticleById(Integer id) {
         return articleRepository.findById(id).map(ArticleMapper::toDto);
+    }
+
+    public ArticleDto addArticle(ArticleDto articleDto) {
+        Article article = ArticleMapper.toEntity(articleDto);
+        Article savedArticle = articleRepository.save(article);
+        return ArticleMapper.toDto(savedArticle);
     }
 
 }

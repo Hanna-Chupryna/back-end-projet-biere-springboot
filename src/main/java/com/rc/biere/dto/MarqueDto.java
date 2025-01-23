@@ -6,8 +6,8 @@ import com.rc.biere.entity.Pays;
 public class MarqueDto {
     private Integer id;
     private String nomMarque;
-    private Integer idPays;
-    private Integer idFabricant;
+    private PaysDto idPays;
+    private FabricantDto idFabricant;
 
     public Integer getId() {
         return id;
@@ -25,19 +25,19 @@ public class MarqueDto {
         this.nomMarque = nomMarque;
     }
 
-    public Integer getIdPays() {
+    public PaysDto getIdPays() {
         return idPays;
     }
 
-    public void setIdPays(Integer idPays) {
+    public void setIdPays(PaysDto idPays) {
         this.idPays = idPays;
     }
 
-    public Integer getIdFabricant() {
+    public FabricantDto getIdFabricant() {
         return idFabricant;
     }
 
-    public void setIdFabricant(Integer idFabricant) {
+    public void setIdFabricant(FabricantDto idFabricant) {
         this.idFabricant = idFabricant;
     }
 }
