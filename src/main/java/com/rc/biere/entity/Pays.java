@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 @Table(name = "pays")
 public class Pays {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_PAYS", nullable = false)
     private Integer id;
 

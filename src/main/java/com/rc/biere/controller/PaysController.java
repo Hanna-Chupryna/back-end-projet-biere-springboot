@@ -3,10 +3,7 @@ package com.rc.biere.controller;
 import com.rc.biere.dto.PaysDto;
 import com.rc.biere.service.PaysService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,13 @@ public class PaysController {
         List<PaysDto> listPays = paysService.getAllPays();
         return ResponseEntity.ok(listPays);
     }
+
+
+    @PostMapping("/add")
+    public ResponseEntity<?> addPays(@RequestBody PaysDto paysDto) {
+        PaysDto savedPays = paysService.addPays(paysDto);
+        return ResponseEntity.ok(savedPays);
+    }
+
 
 }
