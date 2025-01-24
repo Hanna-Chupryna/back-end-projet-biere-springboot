@@ -37,4 +37,10 @@ public class ArticleController {
         return ResponseEntity.ok(savedArticle);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteArticle(@PathVariable Integer id) {
+        articleService.deleteArticleById(id);
+        return ResponseEntity.ok("L'article a été supprimé avec succès.");
+    }
+
 }

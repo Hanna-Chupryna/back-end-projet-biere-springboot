@@ -33,4 +33,8 @@ public class ArticleService {
         return ArticleMapper.toDto(savedArticle);
     }
 
+    public void deleteArticleById(Integer id) {
+        articleRepository.deleteById(id);
+    }
+
 }
