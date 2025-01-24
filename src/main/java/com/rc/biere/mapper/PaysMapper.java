@@ -12,7 +12,7 @@ public class PaysMapper {
         dto.setNomPays(pays.getNomPays());
 
         if (pays.getIdContinent() != null) {
-            dto.setIdContinent(pays.getIdContinent().getId());
+            dto.setIdContinent(ContinentMapper.toDto(pays.getIdContinent()));
         }
         return dto;
     }
@@ -24,8 +24,8 @@ public class PaysMapper {
 
         if (paysDto.getIdContinent() != null) {
             Continent continent = new Continent();
-            continent.setId(paysDto.getIdContinent());
-            paysDto.setIdContinent(continent.getId());
+            continent.setId(paysDto.getIdContinent().getId());
+            pays.setIdContinent(continent);
         }
         return pays;
     }

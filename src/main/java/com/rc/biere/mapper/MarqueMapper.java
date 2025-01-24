@@ -13,11 +13,11 @@ public class MarqueMapper {
         dto.setNomMarque(marque.getNomMarque());
 
         if (marque.getIdFabricant() != null) {
-            dto.setIdFabricant(marque.getIdFabricant().getId());
+            dto.setIdFabricant(FabricantMapper.toDto(marque.getIdFabricant()));
         }
 
         if (marque.getIdPays() != null) {
-            dto.setIdPays(marque.getIdPays().getId());
+            dto.setIdPays(PaysMapper.toDto(marque.getIdPays()));
         }
         return dto;
     }
@@ -29,13 +29,13 @@ public class MarqueMapper {
 
         if (marqueDto.getIdFabricant() != null) {
             Fabricant fabricant = new Fabricant();
-            fabricant.setId(marqueDto.getIdFabricant());
-            marqueDto.setIdFabricant(fabricant.getId());
+            fabricant.setId(marqueDto.getIdFabricant().getId());
+            marque.setIdFabricant(fabricant);
         }
         if (marqueDto.getIdPays() != null) {
             Pays pays = new Pays();
-            pays.setId(marqueDto.getIdPays());
-            marqueDto.setIdPays(pays.getId());
+            pays.setId(marqueDto.getIdPays().getId());
+            marque.setIdPays(pays);
         }
 
         return marque;

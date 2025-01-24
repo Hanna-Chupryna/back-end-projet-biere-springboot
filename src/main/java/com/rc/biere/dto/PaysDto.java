@@ -6,7 +6,7 @@ import com.rc.biere.entity.Continent;
 public class PaysDto {
     private Integer id;
     private String nomPays;
-    private Integer idContinent;
+    private ContinentDto idContinent;
 
     public Integer getId() {
         return id;
@@ -24,11 +24,11 @@ public class PaysDto {
         this.nomPays = nomPays;
     }
 
-    public Integer getIdContinent() {
+    public ContinentDto getIdContinent() {
         return idContinent;
     }
 
-    public void setIdContinent(Integer idContinent) {
+    public void setIdContinent(ContinentDto idContinent) {
         this.idContinent = idContinent;
     }
 }

@@ -1,6 +1,7 @@
 package com.rc.biere.service;
 
 import com.rc.biere.dto.PaysDto;
+import com.rc.biere.entity.Pays;
 import com.rc.biere.mapper.PaysMapper;
 import com.rc.biere.repository.PaysRepository;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,12 @@ public class PaysService {
 
     public List<PaysDto> getAllPays(){
         return paysRepository.findAll().stream().map(PaysMapper::toDto).collect(Collectors.toList());
+    }
+
+    public PaysDto addPays(PaysDto paysDto){
+        Pays pays = PaysMapper.toEntity(paysDto);
+        Pays savedPays = paysRepository.save(pays);
+        return PaysMapper.toDto(savedPays);
     }
 
 }

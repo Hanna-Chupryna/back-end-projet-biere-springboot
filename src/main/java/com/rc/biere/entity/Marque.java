@@ -13,6 +13,7 @@ import lombok.Setter;
 
 public class Marque {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_MARQUE", nullable = false)
     private Integer id;
 
