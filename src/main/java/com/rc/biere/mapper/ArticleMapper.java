@@ -41,15 +41,21 @@ public class ArticleMapper {
 
 
         if(articleDto.getIdMarque() != null) {
-            article.setIdMarque(MarqueMapper.toEntity(articleDto.getIdMarque()));
+            Marque marque = new Marque();
+            marque.setId(articleDto.getIdMarque().getId());
+            article.setIdMarque(marque);
         }
 
         if(articleDto.getIdCouleur() != null) {
-            article.setIdCouleur(CouleurMapper.toEntity(articleDto.getIdCouleur()));
+            Couleur couleur = new Couleur();
+            couleur.setId(articleDto.getIdCouleur().getId());
+            article.setIdCouleur(couleur);
         }
 
         if(articleDto.getIdType() != null) {
-            article.setIdType(TypebiereMapper.toEntity(articleDto.getIdType()));
+            Typebiere typebiere = new Typebiere();
+            typebiere.setId(articleDto.getIdType().getId());
+            article.setIdType(typebiere);
         }
 
         return article;
